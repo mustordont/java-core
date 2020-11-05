@@ -43,5 +43,21 @@ public class Tests {
         street.getItems().get(2).addItem(new Car("car6", true, new Pedestrian("Bart")));
 
         System.out.println("traffic jam at rush hour: " + street.hasTrafficJam()); // true
+
+        try {
+            Street street2 = new Street(
+                    "street with 3 sidewalks",
+                    List.of(),
+                    List.of(
+                            new SideWalk("Sidewalk 1"),
+                            new SideWalk("Sidewalk 2"),
+                            new SideWalk("Sidewalk 3")
+                    )
+            );
+            System.out.println("Street2 with 3 sidewalks " + street2);
+        }
+        catch (Exception e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
     }
 }
